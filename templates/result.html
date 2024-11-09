@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: white;
+        text-align: center;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        background-color: pink;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        font-size: 16px;
+        padding: 10px;
+        background-color: white;
+        color: black;
+      }
+      a {
+        display: block;
+        margin-top: 20px;
+        color: blue;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Your text is {{ action.lower() }}:</h1>
+      <textarea readonly>{{ result }}</textarea>
+      <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encode and Decode</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: white;
+        text-align: center;
+      }
+      .container {
+        width: 80%;
+        margin: 0 auto;
+        background-color: red;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        font-size: 16px;
+        padding: 10px;
+      }
+      input,
+      button {
+        margin-top: 15px;
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+      }
+      button {
+        background-color: green;
+        color: white;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Enter the text for encode and decode</h1>
+      <form action="/encrypt" method="POST" style="margin-bottom: 10px">
+        <textarea name="text" placeholder="Enter your text here"></textarea
+        ><br />
+        <input type="password" name="code" placeholder="Enter secret key" />
+        <button type="submit">Encrypt</button>
+      </form>
+      <form action="/decrypt" method="POST" style="margin-bottom: 10px">
+        <textarea name="text" placeholder="Enter your text here"></textarea
+        ><br />
+        <input type="password" name="code" placeholder="Enter secret key" />
+        <button type="submit">Decrypt</button>
+      </form>
+      <form action="/reset" method="POST">
+        <button type="submit">Reset</button>
+      </form>
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %}
+      <ul>
+        {% for category, message in messages %}
+        <li style="color: red">{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %} {% endwith %}
+    </div>
+  </body>
+</html>
