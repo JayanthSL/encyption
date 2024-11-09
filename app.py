@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import base64
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"  # Required for flash messages
+# app.secret_key = "your_secret_key"  # Required for flash messages
 
 
 # Encryption function
@@ -75,4 +75,4 @@ def reset():
 
 
 if __name__ == "__main__":
-    app.run(debug=False, port="0.0.0.0")
+    app.run(debug=False, host="0.0.0.0", port=5000)
